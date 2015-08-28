@@ -88,7 +88,7 @@ module Switchman
             if shard
               attributes = shard.attributes
               attributes.each_key do |key|
-                attributes[key] = attributes[key].unserialize if attributes[key].is_a?(::ActiveRecord::AttributeMethods::Serialization::Attribute)
+                attributes[key] = attributes[key].unserialize if attributes[key].is_a?(::ActiveRecord::Type::Serialized)
               end
             else
               :nil
